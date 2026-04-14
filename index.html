@@ -1607,7 +1607,7 @@ html,body{font-size:16px}
         </div>
         <div style="height:0.5px;background:var(--b1);margin-bottom:12px"></div>
         <div style="font-size:10px;font-family:var(--mono);color:var(--t3);line-height:1.7">
-          By using SmartSound you acknowledge that you have read, understood, and agree to this disclaimer. For questions contact <span style="color:var(--acc);cursor:pointer" onclick="window.location.href='mailto:smartsoundsupport@gmail.com'"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c5b6a8a4b7b1b6aab0aba1b6b0b5b5aab7b185a2a8a4aca9eba6aaa8">[email&#160;protected]</a></span>.
+          By using SmartSound you acknowledge that you have read, understood, and agree to this disclaimer. For questions contact <span style="color:var(--acc);cursor:pointer" onclick="window.location.href='mailto:smartsoundsupport@gmail.com'">smartsoundsupport@gmail.com</span>.
         </div>
         <div style="font-size:9px;font-family:var(--mono);color:var(--t3);margin-top:8px;opacity:.6">SmartSound V38 · All rights reserved</div>
       </div>
@@ -2040,7 +2040,7 @@ html,body{font-size:16px}
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 'use strict';
 
 // ══════════════════════════════════════════════
@@ -2850,7 +2850,7 @@ function requirePremium(cb, trigger){
 function handlePurchase(){
   // Redirect to Stripe. After payment Stripe sends user back with ?paid=1
   var returnUrl = encodeURIComponent(window.location.href.split('?')[0] + '?paid=1');
-  window.location.href = 'https://buy.stripe.com/28E6oIf2FdsT41rgJy6Vq01?success_url=' + returnUrl;
+  window.location.href = 'https://buy.stripe.com/cNibJ2cUx1Kb7dD3WM6Vq00?success_url=' + returnUrl;
 }
 
 // ── Detect Stripe return after successful payment
@@ -5858,4 +5858,15 @@ window.endSession=function(){
   if(typeof _origEndSession==='function')_origEndSession();
   var mins=window.pFocusMin||0;
   var prof=window.currentProfile||'focus';
-  var tlx=Math.r
+  var tlx=Math.round(calcTLX&&calcTLX()||0);
+  if(mins>0)logSession(mins,prof,tlx);
+};
+
+// Sync ring
+(function(){
+  var el=document.getElementById('ring-fill');
+  if(el)el.setAttribute('stroke-dasharray',CIRC.toFixed(2));
+})();
+</script>
+</body>
+</html>
